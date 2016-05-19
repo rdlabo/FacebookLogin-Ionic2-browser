@@ -9,12 +9,12 @@ export class Facebook
 {
     constructor()
     {
-        // browserのみ挙動
+        // only browser
         if (typeof cordova === "undefined") {
             window.fbAsyncInit = function () {
                 FB.init(
                     {
-                        appId: '794642083974313',
+                        appId: '【input your facebook appID】',
                         xfbml: false,
                         version: 'v2.5'
                     }
@@ -36,7 +36,7 @@ export class Facebook
         return new Promise(function(resolve, reject) {
             if (typeof cordova === "undefined") {
                 if( navigator.userAgent.match('CriOS') ){
-                    alert("iOSのChromeでは動作しません。Safariをお使い下さい。");
+                    alert("don't work chrome for iOS.you should use safari.");
                 } else {
                     console.log("start login");
                     FB.login(
@@ -47,7 +47,7 @@ export class Facebook
                         {scope:'public_profile,user_friends,email'});
                 }
             } else {
-                //スマホ用
+                // using native
                 ngFacebook.login(['email','public_profile','user_friends']).then(
                     (response) => {
                         resolve(response);
