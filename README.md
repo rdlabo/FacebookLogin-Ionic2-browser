@@ -7,17 +7,17 @@
  $git clone git@github.com:rdlabo/fblogin-ionic2-browser.git fblogin-ionic2-browser
  ```
  
- ### 2. move directory
+### 2. move directory
  ```
  $cd fblogin-ionic2-browser
  ```
   
- ### 3. install npm file
+### 3. install npm file
  ```
  $npm i
  ```
    
- ### 4. set facebook appID
+### 4. set facebook appID
  ```
  // services/facebook.ts
 FB.init(
